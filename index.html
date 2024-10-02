@@ -103,9 +103,6 @@
           <div class="dropup-content">
             <div id="buttonGroup" class="btn-group-vertical" role="group"
               aria-label="Vertical radio toggle button group">
-              <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off"
-                onclick="snd_id='china'">
-              <label class=" btn btn-outline-danger" for="vbtn-radio1">Trump blaming every attack on "China!"</label>
               <input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off"
                 onclick="snd_id='pew'">
               <label class="btn btn-outline-danger" for="vbtn-radio2">Somewhat disturbing human-made "pew-pew"
@@ -669,6 +666,7 @@
           }
 
           // Specify a destination country
+          destination = "IND";
           if (typeof destination !== 'undefined' && getDestination() < 80) {
             dstcountry = destination.toUpperCase();
             var center_id = 0;
@@ -704,9 +702,34 @@
             }
           }
 
-          if (typeof drill_mode != 'undefined') {
+          // MAKING CHANGES HERE for setting india as attack destination-- -
+          const getRandomCoordinates = () => {
+            const cities = [
+              { name: "Delhi", lat: 28.7041, lon: 77.1025 },
+              { name: "Mumbai", lat: 19.0760, lon: 72.8777 },
+              { name: "Bengaluru", lat: 12.9716, lon: 77.5946 },
+              { name: "Hyderabad", lat: 17.3850, lon: 78.4867 },
+              { name: "Chennai", lat: 13.0827, lon: 80.2707 },
+              { name: "Kolkata", lat: 22.5726, lon: 88.3639 },
+              { name: "Pune", lat: 18.5204, lon: 73.8567 },
+              { name: "Ahmedabad", lat: 23.0225, lon: 72.5714 },
+              { name: "Jaipur", lat: 26.9124, lon: 75.7873 },
+              { name: "Lucknow", lat: 26.8467, lon: 80.9462 }
+            ];
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            const { name, lat, lon } = randomCity;
+            return { name, lat, lon };
+          };
 
-            dstlat = in_lat
+          // Example usage
+          const { name, lat, lon } = getRandomCoordinates();
+          // MAKING CHANGES HERE-- -
+
+          drill_mode = 1; // set drill mode, in_lat and in_lon here by me
+          in_lat = lat;
+          in_lon = lon;
+          if (typeof drill_mode != 'undefined') {
+            dstlat = in_lat // CHNAGED THESE VALUES FOR INDIA RANDOM CITIES
             dstlong = in_lon
           }
 
@@ -734,7 +757,7 @@
             // update the scrolling attack div
             $('#attackdiv').append(srccountry + " (" + randomIP() + ") " +
               " <span style='color:red'>attacks</span> " +
-              attackdiv_slatlong + " (" + randomIP() + ") " +
+              name + " (" + randomIP() + ") " +
               " <span style='color:steelblue'>(" + which_attack + ")</span> " +
               "<br/>");
             $('#attackdiv').animate({ scrollTop: $('#attackdiv').prop("scrollHeight") }, 500);
