@@ -3,7 +3,7 @@
 <head lang="en-us">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberRakshak</title>
+  <title>Live Map</title>
 
   <!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
   <link rel="stylesheet" type="text/css" href="css/styles.css">
@@ -99,7 +99,7 @@
       <span></span>
       <div class="menu">
         <li>
-          <a href="#">Audio Options</a>
+          <a href="#" class="hoverTab">Audio Options</a>
           <div class="dropup-content">
             <div id="buttonGroup" class="btn-group-vertical" role="group"
               aria-label="Vertical radio toggle button group">
@@ -118,7 +118,7 @@
           </ul>
         </li>
         <li>
-          <a href="#">Map Options</a>
+          <a href="#" class="hoverTab">Map Options</a>
           <div class="dropup-content">
             <div id="buttonGroup" class="btn-group-vertical" role="group"
               aria-label="Vertical radio toggle button group">
@@ -135,21 +135,21 @@
           </div>
           </ul>
         </li>
-        <li><a href="#">live map</a></li>
-        <li><a href="#">feed generator</a></li>
-        <li><a href="#">platforms database</a></li>
-        <li><a href="#">Attacks Database</a></li>
-        <li><a href="#">team details</a></li>
+        <li><a href="#" class="currentPage hoverTab">live map</a></li>
+        <li><a href="#" class="hoverTab"><s> feed generator</s> </a></li>
+        <li><a href="#" class="hoverTab"><s> platforms database</s> </a></li>
+        <li><a href="#" class="hoverTab"><s> Attacks Database</s> </a></li>
+        <li><a href="aboutPage.html" class="hoverTab">team details</a></li>
       </div>
     </div>
   </div>
 
   <div id="titlediv">
-    <p>Cyber Rakshak</p>
+    <p>CYBER RAKSHAK</p>
   </div>
 
   <div class="share-button">
-    <div class="lid">Share <span class="fa fa-share-alt"></span></div>
+    <div class="lid">Share<span class="fa fa-share-alt" style="margin-left: 10px;"></span></div>
     <div class=" share-items-wrapper">
       <div class="share-items">
         <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fexample.com&quote=Visit%20our%20website%20for%20more%20information%21"
@@ -455,7 +455,7 @@
     var mapWidth = $('#container1').width()
     var mapHeight = $('#container1').height()
     var defaultFillColorMap = 'rgba(0, 0, 0, 0.7)'
-    var mapProjectionType = 'mercator'
+    var mapProjectionType = 'equirectangular'
     // equirectangular, mercator, orthographic
 
 
@@ -525,7 +525,7 @@
         },
         geographyConfig: {
           dataUrl: null,
-          hideAntarctica: true,
+          hideAntarctica: false,
           borderWidth: 1.25,
           borderColor: '#875692',
           popupTemplate: function (geography, data) {
@@ -779,9 +779,6 @@
     init();
     // CALLING ATTACK FUNCTION
     attacksDrawerAndSoundPlayer();
-
-
-
   </script>
   <script>
     $('.share-button').hover(function () {
