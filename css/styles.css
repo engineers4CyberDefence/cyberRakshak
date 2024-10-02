@@ -19,7 +19,7 @@ body {
   height: 50vh;
   color: white;
   background-color: rgba(0, 0, 0, .6);
-  padding: 5px;
+  padding: 15px;
   right: 0px;
   top: 35%;
   overflow-y: auto;
@@ -39,7 +39,7 @@ body {
   text-align: left;
   width: 50px;
   height: 50px;
-  top: 0px;
+  top: 1%;
   right: 0px;
   position: fixed;
   padding: 10px;
@@ -167,6 +167,7 @@ blink,
   justify-content: center;
   align-items: center;
   text-align: center;
+  min-height: 50px;
 }
 
 .nav {
@@ -200,7 +201,7 @@ blink,
   text-decoration: none;
   color: #dfdfdf;
   text-transform: capitalize;
-  font-weight: 600;
+  font-size: 16px;
   transition: 0.5s;
 }
 
@@ -227,8 +228,15 @@ blink,
   transition: 0.5s;
 }
 
+.nav input:checked~.menu .currentPage {
+  justify-content: baseline;
+  padding: 5px;
+  border: 3px solid rgba(255, 180, 206, 0.7) !important;
+  transition: 200ms all ease;
+}
+
 .nav input:checked~span {
-  background-color: #FFB4CE;
+  background-color: #dfdfdf;
   transition: 1s;
 }
 
@@ -256,7 +264,7 @@ blink,
   position: fixed;
   top: 0px;
   width: 100%;
-  height: 50px;
+  height: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -264,11 +272,12 @@ blink,
   text-align: center;
   overflow-y: hidden;
   padding: 10px;
-  background-color: rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, .8);
+  box-shadow: 0 4px 4px -2px rgba(255,255,255,.2);
 }
 
 #titlediv p {
-  --fill-color: #FFB4CE;
+  --fill-color: #875692;
   position: relative;
   display: block;
   margin: 4px;
@@ -276,7 +285,7 @@ blink,
 
   /* FOR PROTEST GUERRILLA */
   font-family: "Protest Guerrilla", sans-serif;
-  font-weight: 400;
+  font-weight: 100;
   font-style: normal;
   /* FOR PROTEST GUERRILLA */
 
@@ -290,7 +299,7 @@ blink,
   /*font-style(normal, bold, italic)*/
   text-decoration: none;
   /* text-transform: uppercase; */
-  -webkit-text-stroke: 2px var(--fill-color);
+  -webkit-text-stroke: 1px var(--fill-color);
   background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
   color: transparent;
   background-clip: text;
@@ -321,16 +330,15 @@ blink,
   text-align: center;
   position: fixed;
   height: 36px;
-  top: 0;
+  top: 2%;
   right: 4%;
   width: 135px;
-  color: white;
+  color: rgb(255, 255, 255, 0.8);
   background: #875692;
   border-radius: 20px;
   overflow: hidden;
   line-height: 36px;
   user-select: none;
-  margin: 7px;
   cursor: pointer;
 }
 
@@ -356,7 +364,7 @@ blink,
   left: 0;
   width: 100%;
   height: 100%;
-  font-family: "Lora", serif;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -791,7 +799,7 @@ blink,
   background-color: transparent;
   width: 100px;
   /* background-color: #c3c2c0; */
-  bottom: 12%;
+  bottom: 10%;
 }
 
 div.menu li:hover .dropup-content {
@@ -799,14 +807,12 @@ div.menu li:hover .dropup-content {
   transition: 1s all ease;
 }
 
-div.menu li:hover {
+.hoverTab:not(.currentPage):hover {
   justify-content: baseline;
-  margin-bottom: -2px;
-  border-top: 2px solid rgba(255, 180, 206, 0.7) !important;
-  transition: 0.5s all ease;
+  margin-bottom: -3px;
+  border-top: 3px solid rgba(255, 180, 206, 0.7) !important;
+  transition: 200ms all ease;
 }
-
-
 
 #buttonGroup {
   /* half of max width */
