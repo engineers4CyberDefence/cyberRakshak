@@ -56,16 +56,16 @@ body {
     font-size: 21px;
     font-weight: bold;
     line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: .2;
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: 0 1px 0 #000000;
+    opacity: .5;
 }
 
 .close:hover,.close:focus {
-    color: #000;
+    color: #ffffff;
     text-decoration: none;
     cursor: pointer;
-    opacity: .5;
+    opacity: .8;
 }
 
 button.close {
@@ -77,8 +77,7 @@ button.close {
 }
 
 .alert {
-    padding: 15px;
-    margin-bottom: 20px;
+    padding: 10px 20px;
     border: 1px solid transparent;
     border-radius: 4px;
 }
@@ -114,22 +113,11 @@ button.close {
 .alert-info {
     background-color: #d9edf7;
     border-color: #bce8f1;
-    color: #31708f;
+    color: #875692;
 }
 
 .alert-info hr {
-    border-top-color: #a6e1ec;
-}
-
-.alert-info .alert-link {
-    color: #245269;
-}
-
-
-.alert {
-    border-radius: 0;
-    -webkit-border-radius: 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.11);
+    border-top-color: #875692;
 }
 
 .alert .sign {
@@ -141,21 +129,30 @@ button.close {
     display: inline-block;
 }
 
-.alert-info {
-    background-color: #d9edf7;
-    border-color: #98cce6;
-    color: #3a87ad;
+.alert-white {
+    background-color: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255,0.1);
+    color: rgba(255, 255, 255, 0.8);
+    padding-left: 61px;
+    position: absolute;
+    top: 73px;
+    width: 99%;
+    left: -99%;
 }
 
-.alert-white {
-    background-image: linear-gradient(to bottom,#FFFFFF,#F9F9F9);
-    border-top-color: #d8d8d8;
-    border-bottom-color: #bdbdbd;
-    border-left-color: #cacaca;
-    border-right-color: #cacaca;
-    color: #404040;
-    padding-left: 61px;
-    position: relative;
+@-webkit-keyframes topBannerAnimation {
+  100% { left: 0.5%; }
+}
+
+@keyframes topBannerAnimation {
+  100% { left: 0.5%; }
+}
+
+#topBanner {
+  -webkit-animation: topBannerAnimation 0.5s forwards;
+  -webkit-animation-delay: 2s;
+  animation: topBannerAnimation 0.5s forwards;
+  animation-delay: 1s;
 }
 
 .alert-white .icon {
@@ -208,10 +205,9 @@ button.close {
 }
 
 .alert-white.alert-info .icon,.alert-white.alert-info .icon:after {
-    border-color: #3a8ace;
-    background: #4d90fd;
+    border-color: #875692;
+    background: #875692;
 }
-
 /* __________ */
 
 
