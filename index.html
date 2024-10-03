@@ -639,9 +639,9 @@ Best regards,
     function attacksDrawerAndSoundPlayer() {
       // we read in a modified file of all country centers
       var centers = [];
-      d3.tsv("https://raw.githubusercontent.com/hrbrmstr/pewpew/master/country_centroids_primary.csv", function (data) { centers = data; });
-      d3.csv("https://raw.githubusercontent.com/hrbrmstr/pewpew/master/samplatlong.csv", function (data) { slatlong = data; });
-      d3.csv("https://raw.githubusercontent.com/hrbrmstr/pewpew/master/cnlatlong.csv", function (data) { cnlatlong = data; });
+      d3.tsv("assets/csvTsv/country_centroids_primary.csv", function (data) { centers = data; });
+      d3.csv("assets/csvTsv/samplatlong.csv", function (data) { slatlong = data; });
+      d3.csv("assets/csvTsv/cnlatlong.csv", function (data) { cnlatlong = data; });
 
       // setup structures for the "hits" (arcs)
       // and circle booms
