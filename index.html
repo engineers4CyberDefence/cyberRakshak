@@ -339,35 +339,37 @@
       };
 
     document.querySelectorAll('.paw-button').forEach(elem => {
-      elem.addEventListener('click', e => {
-        let number = elem.children[1].textContent;
-        if (elem.children[1].textContent == '') {
-          setTimeout(() => {
-            sendEmail();
-          }, 800);
-        }
-        if (!elem.classList.contains('animation')) {
-          elem.classList.add('animation');
-          for (let i = 0; i < confettiAmount; i++) {
-            createConfetti(elem);
-          }
-          setTimeout(() => {
-            elem.classList.add('confetti');
-            setTimeout(() => {
-              elem.classList.add('liked');
-              elem.children[1].textContent = 'Thankyou!';
-            }, 400);
-            setTimeout(() => {
-              elem.querySelectorAll('i').forEach(i => i.remove());
-            }, 600);
-          }, 260);
-        } else {
-          elem.classList.remove('animation', 'liked', 'confetti');
-          elem.children[1].textContent = '';
-        }
-        e.preventDefault();
-      });
-    });
+  elem.addEventListener('click', e => {
+    const target = e.currentTarget;
+    let number = target.children[1].textContent;
+    if (number === '') {
+      setTimeout(() => {
+        sendEmail();
+      }, 800);
+    }
+    if (!target.classList.contains('animation')) {
+      target.classList.add('animation');
+      for (let i = 0; i < confettiAmount; i++) {
+        createConfetti(target);
+      }
+      setTimeout(() => {
+        target.classList.add('confetti');
+        setTimeout(() => {
+          target.classList.add('liked');
+          target.children[1].textContent = 'Thankyou!';
+        }, 400);
+        setTimeout(() => {
+          target.querySelectorAll('i').forEach(i => i.remove());
+        }, 600);
+      }, 260);
+    } else {
+      target.classList.remove('animation', 'liked', 'confetti');
+      target.children[1].textContent = '';
+    }
+    e.preventDefault();
+  });
+});
+
     function sendEmail() {
       var email = "raianurag3189@gmail.com";
       var subject = "Feedback on Cyber-Rakshak";
